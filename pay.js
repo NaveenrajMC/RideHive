@@ -127,7 +127,7 @@ async function updateRideDetails(pickup, dropoff) {
 
 // Main initialization
 document.addEventListener("DOMContentLoaded", async function () {
-    if (window.location.pathname.includes('/pay.html')) {
+    if (window.location.pathname.includes('pay.html')) {
         // Update driver info
         const driver = await fetchRandomDriver();
         updateDriverInfo(driver);
