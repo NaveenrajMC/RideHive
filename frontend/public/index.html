@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ride Hive - Smart Pooling</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <!-- Universal Ride Hive Logo Component -->
+<div class="ridehive-logo">
+  <span class="brand-name">Ride<strong>Hive</strong></span>
+  <div class="tagline">Smart Commute. Greener Future.</div>
+</div>
+
+    <!-- <div class="logo">Ride Hive</div> -->
+    <ul class="main-menu">
+      <li>Home</li>
+      <li>How It Works</li>
+      <li>Community</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+    <div class="right-nav">
+      <span>🌐 EN</span>
+      <span>Support</span>
+      <div id="user-section">
+        <button id="loginBtn" onclick="window.location.href='login.html'">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sub Navigation -->
+  <nav class="sub-nav">
+    <a href="#">Book a Ride</a>
+    <a href="#">Offer a Ride</a>
+    <a href="#">Pricing</a>
+    <a href="#">Carpool Options</a>
+    <a href="#">Eco Calculator</a>
+  </nav>
+
+  <!-- Main Section -->
+  <section class="main-content">
+    <div class="text-section">
+      <h1>RideHive Pooling</h1>
+      <p>Smart Commute. Greener Future.</p>
+      <p>ERideHive is your eco-friendly carpooling platform that connects commuters traveling in the same direction. Reduce costs, save time, and lower your carbon footprint by sharing your ride with verified users nearby.</p>
+      <a href="/ride.html" class="cta-button">Start Pooling</a>
+    </div>
+    <div class="image-section">
+      <dotlottie-player src="https://lottie.host/8d645c40-2332-4b11-bce9-c03510c600a3/3JTcWeMcb4.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+    </div>
+  </section>
+
+  <!-- More from RideHive Section -->
+  <section class="more-section">
+    <h2>More from RideHive</h2>
+    <p class="tagline">Go green with every ride.</p>
+
+    <div class="features">
+      <h3>Featured</h3>
+      <ul>
+        <li>Extra seats</li>
+        <li>Eco-friendly vehicles</li>
+        <li>Bike & scooter options</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <h3>RideHive Reserve</h3>
+      <p>Book your carpool in advance for stress-free commuting</p>
+    </div>
+
+    <div class="service-card">
+      <h3>RideHive Standard</h3>
+      <p>Affordable shared rides with verified commuters</p>
+    </div>
+
+    <div class="service-card">
+      <h3>RideHive Pool</h3>
+      <p>Share your ride with up to 3 co-riders for maximum efficiency</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Ride Hive. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const userSection = document.getElementById('user-section');
+    const username = localStorage.getItem('username');
+
+    if (username) {
+      const firstLetter = username.charAt(0).toUpperCase();
+
+      userSection.innerHTML = `
+        <div style="position: relative; display: inline-block;">
+          <button id="userBtn" style="
+            width: 35px;
+            height: 35px;
+            background-color: #4a9b69;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+          ">${firstLetter}</button>
+          <div id="dropdownMenu" style="
+            display: none;
+            position: absolute;
+            top: 45px;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            z-index: 1000;
+          ">
+            <button id="logoutBtn" style="
+              padding: 10px 20px;
+              width: 100%;
+              background: white;
+              border: none;
+              text-align: left;
+              cursor: pointer;
+              color: #dc3545;
+              font-weight: 500;
+            ">Logout</button>
+          </div>
+        </div>
+      `;
+
+      const userBtn = document.getElementById('userBtn');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      const logoutBtn = document.getElementById('logoutBtn');
+
+      // Toggle dropdown
+      userBtn.addEventListener('click', () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // Logout
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('username');
+        location.reload();
+      });
+
+      // Hide dropdown on outside click
+      document.addEventListener('click', (e) => {
+        if (!userSection.contains(e.target)) {
+          dropdownMenu.style.display = 'none';
+        }
+      });
+    }
+  });
+</script>
+
+
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>

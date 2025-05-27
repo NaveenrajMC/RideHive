@@ -1,0 +1,31 @@
+ecoride/
+├── backend/
+│   ├── node_modules/
+│   ├── server.js
+│   ├── connection-test.js
+│   ├── db-verify.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .env
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── pay.html
+│   │   ├── pool.html
+│   │   ├── ride.html
+│   │   └── ridestatus.html
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── style.css
+│   │   │   ├── styles.css
+│   │   │   └── ridestatus.css
+│   │   ├── js/
+│   │   │   └── ride.js
+│   │   └── img/
+│   │       ├── car-animation.gif
+│   │       └── img.jpg
+│   └── .editorconfig
+├── documentation/
+│   └── roadmap.unknown
+└── README.md
