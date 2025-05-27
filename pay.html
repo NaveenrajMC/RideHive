@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Hive - Your Carpool Status</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/ridestatus.css">
+</head>
+<body>
+    <div class="desktop-container">
+        <header class="desktop-header">
+            <div class="logo-container">
+                <!-- Universal Ride Hive Logo Component -->
+<div class="ridehive-logo">
+  <span class="brand-name">Ride<strong>Hive</strong></span>
+  <div class="tagline">Smart Commute. Greener Future.</div>
+</div>
+
+                <!-- <div class="logo">
+                    <span class="eco">Ride Hive</span><span class="ride"></span>
+                    <div class="tagline">Smart Commute. Greener Future.</div>
+                </div> -->
+                <div class="header-actions">
+                    <button class="help-btn"><i class="fas fa-question-circle"></i> Help</button>
+                    <button class="account-btn"><i class="fas fa-user-circle"></i> My Account</button>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="#">Book Ride</a>
+                <a href="#">My Carpools</a>
+                <a href="#">Eco Rewards</a>
+                <a href="#">History</a>
+                <a href="#">Settings</a>
+            </nav>
+        </header>
+
+        <main class="desktop-main">
+            <div class="status-container">
+                <div class="status-header">
+                    <h1>Your Carpool Status</h1>
+                    <div class="arrival-time">
+                        <i class="fas fa-clock"></i>
+                        <span>Arriving in <strong>2 minutes</strong></span>
+                    </div>
+                </div>
+
+                <div class="ride-card">
+                    <div class="route-section">
+                         <div class="location-details">
+                                <h2 id="pickup-location">Pickup Location</h2> <!-- Added -->
+                                <p class="address" id="pickup-address"></p>    <!-- Optional detailed address -->
+                            </div>
+                        <div class="location pickup">
+                            <div class="location-marker">
+                                <div class="marker-icon start"></div>
+                                <div class="marker-line"></div>
+                            </div>
+                            <div class="location-details">
+                                <div class="otp-badge">
+                                    <span>POOL OTP</span>
+                                    <span class="otp-code">9835</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="location-dropoff">
+                            <div class="location-marker">
+                                <div class="marker-line"></div>
+                                <div class="marker-icon end"></div>
+                            </div>
+                            <div class="location-details">
+                                <h2 id="dropoff-location">Dropoff Location</h2> <!-- Added -->
+                                <p class="address" id="dropoff-address"></p>    <!-- Optional detailed address -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="driver-section">
+                        <div class="driver-status">
+                            <i class="fas fa-car"></i>
+                            <p>Your carpool is <strong>43 meters</strong> away</p>
+                        </div>
+                        
+                        <div class="driver-info">
+                            <div class="vehicle-info">
+                                <div class="license-plate">TN99AA6270</div>
+                                <div class="car-model">Swift Dzire <span class="eco-badge">Green Certified</span></div>
+                            </div>
+                            <div class="driver-profile">
+                                <div class="avatar">MR</div>
+                                <div class="driver-details">
+                                    <div class="driver-name">Mohammad Rafee</div>
+                                    <div class="rating">
+                                        <!-- Stars will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fare-section">
+                        <div class="fare-details">
+                            <div class="fare-type">
+                                <i class="fas fa-leaf"></i>
+                                <span>EcoPool Shared Fare</span>
+                            </div>
+                            <div class="distance-info">Distance: <span class="calculated-distance">5 km</span></div>
+                            <div class="fare-range">₹107 - ₹159</div>
+                        </div>
+                        <div class="payment-method">
+                            <span>Payment:</span>
+                            <span>Cash (Pay directly to driver)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions-section">
+                    <button class="action-btn cancel">
+                        <i class="fas fa-times"></i> Cancel Ride
+                    </button>
+                    <button class="action-btn notes">
+                        <i class="fas fa-edit"></i> Add Notes
+                    </button>
+                    <button class="action-btn share">
+                        <i class="fas fa-share-alt"></i> Share Details
+                    </button>
+                    <button class="action-btn contact">
+                        <i class="fas fa-phone-alt"></i> Contact Driver
+                    </button>
+                </div>
+
+                <div class="waypoints-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Additional Stops</h3>
+                    <div class="waypoints-list">
+                        <div class="waypoint">
+                            <input type="checkbox" id="stop1" checked>
+                            <label for="stop1">AIC Raise, Rathinam Tech Zone</label>
+                            <button class="edit-btn">Edit <i class="fas fa-pencil-alt"></i></button>
+                        </div>
+                        <div class="waypoint">
+                            <input type="checkbox" id="stop2" checked>
+                            <label for="stop2">Madukkarai, Palakkad - Coimbatore Road</label>
+                            <button class="edit-btn">Edit <i class="fas fa-pencil-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eco-impact-card">
+                <h3><i class="fas fa-seedling"></i> Your Eco Impact</h3>
+                <div class="impact-metrics">
+                    <div class="metric">
+                        <div class="metric-value">1.2 L</div>
+                        <div class="metric-label">Petrol Saved</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">₹42</div>
+                        <div class="metric-label">Your Savings</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">3</div>
+                        <div class="metric-label">People Sharing</div>
+                    </div>
+                </div>
+                <div class="impact-comparison">
+                    Equivalent to planting 0.3 trees or powering a home for 4 hours
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer style="
+        background-color: #33691e;
+        color: #ffffff;
+        padding: 2rem 0;
+        text-align: center;
+        margin-top: auto;
+        font-family: 'Segoe UI', sans-serif;
+    ">
+        <div style="
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        ">
+            <p style="
+                font-size: 0.9rem;
+                color: #ffffff;
+                margin: 0;
+                line-height: 1.6;
+            ">
+                &copy; 2025 Ride Hive. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/pay.js" defer></script>
+</body>
+</html>
